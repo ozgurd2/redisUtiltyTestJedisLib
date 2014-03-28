@@ -57,7 +57,7 @@ public class SimpleConnectRedis {
         //http://redis.io/commands/ZADD
         String key = "mostUsedLanguages";
         Jedis jedis = new Jedis("localhost");
-        jedis.flushAll();
+        jedis.flushAll();//DAHA ÖNCE BASTIGIM DATAYI SİL
         jedis.zadd(key, 100, "java");
         Map<String, Double> scoreMembers = new HashMap<String, Double>();
         scoreMembers.put("fantom", 90d);
