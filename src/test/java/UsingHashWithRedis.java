@@ -52,7 +52,13 @@ public class UsingHashWithRedis {
 
     @Test
     public void insertUserRedis() {
-
+        Map<String, String> userProperties=new HashMap<String, String>();
+        userProperties.put("userName",user.getUserName());
+        userProperties.put("firstName",user.getFirstName());
+        userProperties.put("lastName",user.getLastName());
+        userProperties.put("email",user.getEmail());
+        userProperties.put("password",user.getPassword());
+        jedis.hmset("user:"+user.getUserName(),userProperties);
     }
 
     @Test
