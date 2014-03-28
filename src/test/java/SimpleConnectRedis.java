@@ -49,7 +49,7 @@ public class SimpleConnectRedis {
         System.out.println("-----------------------");
         System.out.println("sadd komutu duplike kayıtlara izin vermez");
         jedis.sadd(cacheKey, "java", "ruby");
-        System.out.println(jedis.smembers(cacheKey));
+        System.out.println(jedis.smembers(cacheKey));//keyin butun içeriğini basar
     }
 
     @Test
