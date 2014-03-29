@@ -58,6 +58,7 @@ public class UsingHashWithRedis {
         userProperties.put("lastName",user.getLastName());
         userProperties.put("email",user.getEmail());
         userProperties.put("password",user.getPassword());
+        //istenirse prop  variable ı beanUtilDescribeAndPropulateUtility   methodundaki örneğe bakılarak bind edilebilir.
         jedis.hmset("user:"+user.getUserName(),userProperties);
     }
 
@@ -70,6 +71,7 @@ public class UsingHashWithRedis {
     public void loadUserFromRedis(){
         Map<String,String> properites=jedis.hgetAll("user:"+user.getUserName());
         User user=new User();
+        //istenirse prop  variable ı beanUtilDescribeAndPropulateUtility   methodundaki örneğe bakılarak bind edilebilir.
         user.setUserName(properites.get("userName"));
         user.setFirstName(properites.get("firstName"));
         user.setLastName(properites.get("lastName"));
